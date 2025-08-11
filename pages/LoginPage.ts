@@ -13,14 +13,14 @@ export class LoginPage {
     this.page = page;
     this.myAccountButton = page.getByRole('button', { name: 'My account' });
     this.loginLink = page.getByRole('link', { name: 'Login' });
-    this.emailInput = page.locator('#input-email');
-    this.passwordInput = page.locator('#input-password');
-    this.loginButton = page.locator('input[value="Login"]');
-    this.successHeader = page.locator('h2:has-text("My Account")');
+    this.emailInput = page.getByRole('textbox', { name: 'E-Mail Address' });
+    this.passwordInput = page.getByRole('textbox', { name: 'Password' });
+    this.loginButton = page.getByRole('button', { name: 'Login' });
+    this.successHeader = page.locator('//*[@id="widget-navbar-217834"]/ul/li[6]/a/div/span');
   }
 
   async goto() {
-    await this.page.goto('/');
+    await this.page.goto('https://ecommerce-playground.lambdatest.io/');
   }
 
   async login(email: string, password: string) {
