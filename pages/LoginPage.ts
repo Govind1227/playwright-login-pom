@@ -22,7 +22,7 @@ export class LoginPage {
   }
 
   async login(email: string, password: string) {
-    await this.myAccountButton.click(); 
+    await this.myAccountButton.click();
     await this.emailInput.fill(email);
     await this.passwordInput.fill(password);
     await this.loginButton.click();
